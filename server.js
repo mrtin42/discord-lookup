@@ -68,10 +68,10 @@ app.get("/v1/guild/:id", cors({
                 }
 
                 res.send(output);
-                client.setEx(`guild_${id}`, 10800, JSON.stringify(output))
+                client.setEx(`guild_${id}`, 1800, JSON.stringify(output))
         })
     }
-})
+}).
 
 app.get("/v1/application/:id", cors({
     methods: ["GET"]
@@ -103,7 +103,7 @@ app.get("/v1/application/:id", cors({
                 }
 
                 res.send(json);
-                client.setEx(`application_${id}`, 10800, JSON.stringify(json))
+                client.setEx(`application_${id}`, /* just 30 minutes */ 1800, JSON.stringify(json))
             })
     }
 })
@@ -173,7 +173,7 @@ app.get("/v1/user/:id/", cors({
                     }
 
                     res.send(output);
-                    client.setEx(`user_${id}`, 10800, JSON.stringify(output)) // cached for 3 hours
+                    client.setEx(`user_${id}`, 1800, JSON.stringify(output)) // cached for 30 minutes
                 });
         }
     } catch (err) {
