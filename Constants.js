@@ -1,4 +1,4 @@
-let USER_FLAGS = [{
+const USER_FLAGS = [{
     flag: "DISCORD_EMPLOYEE",
     bitwise: 1 << 0
 },
@@ -68,7 +68,7 @@ let USER_FLAGS = [{
 }
 ];
 
-let APPLICATION_FLAGS = [{
+const APPLICATION_FLAGS = [{
     flag: "GATEWAY_PRESENCE",
     bitwise: 1 << 12
 },
